@@ -1,0 +1,13 @@
+São Paulo, 25 de Novembro 2014
+
+Treinamento de Programação em C.
+
+Objetivo: Desenvolver um aplicativo que simule um jogo da forca.
+
+	O jogo deve obter as palavras através de um arquivo.
+	O jogador terá 5 chances de erro antes de perder o jogo.
+	Ao adivinhar uma palavra ou errar 5 vezes o jogo termina. E a pontuação e definida com base nos erros.
+	O Ranking deve ser mantido em um arquivo e estar disponivel a cada inicialização do programa.
+
+
+
