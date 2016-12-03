@@ -15,8 +15,7 @@ void procuraLetra(char *palavra, char letra, char *atual){
 void pegaPalavra(FILE *arq, char palavra[30]){
 	int key, cod;
     
-
-        printf("%d", key);	
+        key = sorteio(0,9);
 	arq = fopen("palavras", "r");
 	if(arq == NULL)
 		printf("Não foi possível abrir o arquivo");
@@ -30,10 +29,21 @@ void pegaPalavra(FILE *arq, char palavra[30]){
 	}
 
 //função que gera um número aleatório entre 0 e 9
-int sorteio(){
-	srand(time(NULL));   
-	return rand() % 9;
+int sorteio(int min_num, int max_num){
+ 	    int result=0,low_num=0,hi_num=0;
+            if(min_num<max_num)
+            {
+                low_num=min_num;
+                hi_num=max_num+1; // this is done to include max_num in output.
+            }else{
+                low_num=max_num+1;// this is done to include max_num in output.
+                hi_num=min_num;
+            }
+            srand(time(NULL));
+            result = (rand()%(hi_num-low_num))+low_num;
+            return result;
 }
+
 
 int main()
 {
