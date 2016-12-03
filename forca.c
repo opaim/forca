@@ -16,7 +16,7 @@ void pegaPalavra(FILE *arq, char palavra[30]){
 	int key, cod;
     
 
-	key = sorteio();	
+        printf("%d", key);	
 	arq = fopen("palavras", "r");
 	if(arq == NULL)
 		printf("Não foi possível abrir o arquivo");
@@ -29,9 +29,9 @@ void pegaPalavra(FILE *arq, char palavra[30]){
 		
 	}
 
-
+//função que gera um número aleatório entre 0 e 9
 int sorteio(){
-	srand(clock());   
+	srand(time(NULL));   
 	return rand() % 9;
 }
 
