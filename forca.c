@@ -55,7 +55,9 @@ int main()
 
 	
 	pegaPalavra(arq, palavra);
-	
+
+	/*coloca um traço(-) em cada letra de uma palavra com mesmo tamanho da sorteada.
+ 	* e inicia o jogo solicitando os palpites do jogador */ 	 
 	for(count=0; count < strlen(palavra); count++)
 		atual[count]='-';
 
@@ -63,13 +65,17 @@ int main()
 	{	
 		system("clear");
 		printf("Bem vindo ao Jogo da Forca!!!\n Preparem Seus Pescoços...\n\n");
+                // imprime na tela traços para cada letra da palavra sorteada que ainda nao tentham sido adivinhadas
 		for(count=0; count < strlen(atual); count++)
 			printf("%c ", atual[count]);
+                //Obtém letra  que o jogador informar
 		printf("\nDigite uma letra:\n");
 		scanf("%c", &letra);
+                //Chama a função para verificar se a palavra sorteada tem a letra informada
 		procuraLetra(palavra, letra, atual);
 	}while(strcmp(palavra, atual) != 0);
-
+        
+        //imprime a palavra atual após o jogador acertar todas as letras.
 	system("clear");
 	for(count=0; count < strlen(atual); count++)
 		printf("%c ", atual[count]);
